@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+  background: repeating-linear-gradient(
+    to bottom,
+    #e8dfc8,   /* 기본 종이색 (조금 더 어둡게) */
+    #e8dfc8 28px,
+    #cfc5a8 29px  /* 줄 색 */
+  );
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 60%,
+    rgba(0,0,0,0.3)
+  );
+  pointer-events: none;
+}
+.handwriting {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 24px;
+  color: #222;
+  text-shadow: 0 0 1px rgba(0,0,0,0.4);
+  transform: rotate(-1deg);
+  }
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background: black;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
